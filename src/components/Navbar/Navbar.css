@@ -1,0 +1,279 @@
+ nav {
+   width: 100%;
+   height: 66px;
+   background-color: #fdecef;
+   padding: 0 50px;
+
+ }
+
+
+
+ .navinner {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 66px;
+   gap: 20px;
+ }
+
+ .catalog-link {
+   color: #f5752f;
+   padding: 0 15px;
+   background-color: #fff;
+   border-radius: 10px;
+   height: 45px;
+ }
+
+ .logo {
+   display: flex;
+   align-items: center;
+   /* background-color: #504545; */
+   flex-direction: column;
+ }
+
+ .logo span {
+   color: #f5752f;
+   font-size: 14px;
+
+ }
+
+ .search {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 438px;
+   height: 45px;
+   background-color: #fff;
+   border-radius: 10px;
+   cursor: pointer;
+ }
+
+ .search input {
+   width: 100%;
+   height: 95%;
+   border: none;
+   outline: none;
+   font-size: 16px;
+   padding-left: 15px;
+
+   background-color: transparent;
+   color: #757575;
+ }
+
+ nav a {
+   text-decoration: none;
+   display: flex;
+   place-items: center;
+   gap: 5px;
+ }
+
+ .ico {
+   font-size: 24px;
+   width: 12%;
+   color: #f5752f;
+ }
+
+ .ico:hover {
+   background-color: #f5752f;
+   height: 100%;
+   border-radius: 0 10px 10px 0;
+   color: white;
+ }
+
+ .ikons {
+   font-size: 20px;
+   font-weight: 300;
+ }
+
+ .links {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+   padding: 10px 15px;
+   background-color: #fff;
+   border-radius: 10px;
+ }
+
+ .icons {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+
+ }
+
+ .icons a {
+   color: #f5752f;
+   padding: 0 15px;
+   background-color: #fff;
+   border-radius: 10px;
+   height: 45px;
+   cursor: pointer;
+   border: 1px solid #f5752f;
+
+ }
+
+ .icons a:hover {
+   background-color: #f5752f;
+   color: white;
+   transition: 0.3s;
+ }
+
+ .iconka {
+   display: flex;
+   align-items: center;
+   gap: 20px;
+
+ }
+
+ .iconka a {
+   color: #f5752f;
+   padding: 0 15px;
+   background-color: #fff;
+   border-radius: 10px;
+   height: 45px;
+   cursor: pointer;
+   border: 1px solid #f5752f;
+
+ }
+
+ .iconka a:hover {
+   background-color: #f5752f;
+   color: white;
+   transition: 0.3s;
+ }
+
+ .icon-link.active {
+   background-color: #f5752f;
+   color: #fff;
+ }
+
+ .links a {
+   color: #f5752f;
+
+ }
+
+ .search-btn {
+   width: 50px;
+   height: 100%;
+   border: none;
+   background: transparent;
+   color: #f5752f;
+   font-size: 22px;
+   cursor: pointer;
+   display: flex;
+   place-items: center;
+   justify-content: center;
+   border-radius: 0 10px 10px 0;
+ }
+
+ .search-btn:hover {
+   background: #f5752f;
+   color: #fff;
+ }
+
+ @media screen and (max-width: 1200px) {
+
+   .logo span {
+     font-size: 12px;
+
+   }
+
+   .logo img {
+     width: 30px;
+     height: auto;
+   }
+
+   .navbar {
+     font-size: 12px;
+   }
+
+   .icons a {
+     height: 34px;
+   }
+
+   .iconka a {
+     height: 34px;
+   }
+
+
+
+
+
+
+ }
+
+ @media screen and (max-width: 900px) {
+   nav {
+     padding: 0 50px;
+   }
+
+   .navinner {
+     gap: 10px;
+   }
+
+   .search {
+     width: 300px;
+   }
+
+   .icons a {
+     padding: 0 10px;
+   }
+
+   .icons {
+     display: none;
+   }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media screen and (max-width: 770px) {
+   nav {
+     padding: 10px 0;
+     height: 110px;
+   }
+
+   .navinner {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 10px;
+     align-items: center;
+     padding: 10px 0;
+     width: 100%;
+   }
+
+   /* 1-QATOR */
+   .logo {
+     grid-column: 1 / 2;
+     justify-self: start;
+     /* padding-left: 50px; */
+   }
+
+   .iconka {
+     grid-column: 2 / 3;
+     justify-self: end;
+     /* padding-right: 50px; */
+   }
+
+ }
+
+
+ @media screen and (max-width: 870px) {
+   nav {
+     padding: 0 10px;
+   }
+ }

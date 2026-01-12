@@ -1,0 +1,87 @@
+/* WRAPPER */
+.best-wrapper {
+  padding:  50px ;
+  background: #fff;
+}
+
+/* BLOCK */
+.best {
+  background: #fdecef;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+/* HEADER */
+.best-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* TITLE */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #f5752f;
+  cursor: pointer;
+}
+
+/* ARROWS */
+.arrows {
+  display: flex;
+  gap: 10px;
+}
+
+.arrows button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #f5752f;
+  background: #fff;
+  color: #f5752f;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.arrows button:hover {
+  background: #f5752f;
+  color: #fff;
+}
+
+/* SCROLL CONTAINER — MUHIM JOY */
+.products-scroll {
+  display: flex;
+  gap: 20px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+
+  padding: 10px 0;
+
+  align-items: stretch;   /* 🔥 card siqilmasligi uchun */
+}
+
+/* SCROLLBAR */
+.products-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.products-scroll::-webkit-scrollbar-thumb {
+  background: #f5752f;
+  border-radius: 10px;
+}
+
+
+
+@media screen and (max-width: 870px){
+    .best-wrapper{
+ padding:  20px;
+
+    }
+}

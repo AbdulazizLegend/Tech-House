@@ -1,0 +1,195 @@
+.search-wrapper {
+  position: relative;
+  max-width: 440px;
+  width: 100%;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  height: 45px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-radius 0.2s ease;
+  border: 1px solid #f5752f;
+}
+
+.search-box.active {
+  border-radius: 10px 10px 0 0;
+}
+
+.search-box input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0 0 12px ;
+  font-size: 15px;
+  background: transparent;
+  color: #757575;
+}
+
+.search-btn,
+.clear-btn {
+  width: 42px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #f5752f;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  justify-content: center;
+}
+
+
+
+/* .clear-btn:hover {
+  background: #f5752f;
+  color: #fff;
+  transition: 0.3s;
+} */
+.clear-btn:hover {
+  background: transparent;
+  color: #f5752f;
+}
+
+/* faqat ichida X bo‘lsa hover ishlasin */
+.clear-btn:has(svg):hover {
+  background: #f5752f;
+  color: #fff;
+}
+
+.search-btn:hover {
+  background: #f5752f;
+  color: #fff;
+  transition: 0.3s;
+}
+
+/* DROPDOWN */
+.search-dropdown {
+  position: absolute;
+  /* top: 45px; */
+  width: 100%;
+  background: #fff;
+  border-radius: 0 0 10px 10px;
+  z-index: 20;
+  overflow: hidden;
+  border: 1px solid #f5752f;
+  border-top: none;
+
+}
+ 
+
+/* ITEM */
+.search-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.search-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  text-align: left;
+}
+.search-item .title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.search-item > div {
+  flex: 1;
+  min-width: 0;
+}
+
+
+
+.search-item:hover {
+  background: #fdecef;
+}
+
+.search-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.search-item .title {
+  font-size: 14px;
+}
+
+.search-item .price {
+  font-size: 13px;
+  color: #f5752f;
+}
+
+/* EMPTY STATE */
+.search-dropdown.empty {
+  padding: 16px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  height: 45px;
+  border-radius: 10px;
+  /* faqat shu yerda */
+  overflow: hidden;
+  /* MUHIM */
+}
+
+.search-box input {
+  border-radius: 0;
+}
+
+.search-btn,
+.clear-btn {
+  border-radius: 0;
+}
+
+ 
+@media screen and (max-width: 1200px) {
+  .search-box {
+    height: 34px;
+  }
+
+  .search-box input {
+    font-size: 12px;
+
+  }
+}
+@media screen and (max-width: 770px){
+
+  .search-wrapper {
+    grid-column: 1 / -1;
+    width: 100%;
+    max-width: 100% !important;      /* 🔥 ASOSIY YECHIM */
+    padding: 0 50px;
+    box-sizing: border-box;
+    justify-self: center;
+  }
+  .search-dropdown{
+   position: relative !important;
+  }
+  }

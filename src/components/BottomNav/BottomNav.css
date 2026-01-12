@@ -1,0 +1,38 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #fff;
+  border-top: 1px solid #eee;
+  display: none;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1000;
+}
+
+.bn-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 11px;
+  color: #999;
+  text-decoration: none;
+}
+
+.bn-item svg {
+  font-size: 22px;
+  margin-bottom: 2px;
+}
+
+.bn-item.active {
+  color: #f5752f;
+}
+
+/* FAQAT MOBILE */
+@media (max-width: 900px) {
+  .bottom-nav {
+    display: flex;
+  }
+}
