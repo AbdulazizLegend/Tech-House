@@ -6,6 +6,30 @@
 
  }
 
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -7px;
+  background: #ff3b3b;
+  color: white;
+  font-size: 7px;
+  font-weight: bold;
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  max-height: 15px;
+  /* padding:  5px; */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid white;
+}
 
 
  .navinner {

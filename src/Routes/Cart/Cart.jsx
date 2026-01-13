@@ -1,66 +1,116 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart } from "../../redux/cartSlice";
+import { addToCart, removeFromCart, decreaseCart, clearCart } from "../../redux/cartSlice";
 import "./Cart.css";
+import { GoTrash } from "react-icons/go";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function Cart() {
   const cart = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
 
-  const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = cart.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
-  );
+  const totalQuantity = cart.reduce((sum, i) => sum + i.quantity, 0);
+  const totalPrice = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   return (
-    <div className="cart-page container">
-      <h2 className="cart-title">🛒 Savatcha</h2>
+    <>
+      <div id="uhh" className={`cart ${showModal ? "blur" : ""}`}>
+        <div className="container">
+          <h2 className="page-title">Savatingiz ({totalQuantity})</h2>
 
-      {cart.length === 0 ? (
-        <p className="cart-empty">Savatcha hozircha bo‘sh</p>
-      ) : (
-        <>
-          <div className="cart-list">
-            {cart.map(p => (
-              <div className="cart-item" key={p.id}>
-                <div className="cart-img">
-                  <img src={p.url} alt={p.title} />
+          {/* Agar savat bo‘sh bo‘lsa */}
+          {cart.length === 0 ? (
+            <div className="empty">🛒 Savatcha bo‘sh</div>
+          ) : (
+            <div className="cart-grid">
+              {/* LEFT */}
+              <div className="cart-items">
+                {cart.map(item => (
+                  <div className="item" key={item.id}>
+                    <Link to={`/product/${item.id}`}>
+                      <img src={item.url} alt={item.title} />
+                    </Link>
+
+                    <div className="info">
+                      <h4>{item.title}</h4>
+                      <span>{item.price.toLocaleString()} so‘m</span>
+                    </div>
+                    <div className="rows">
+
+                      <div className="qty">
+                        <button onClick={() => dispatch(decreaseCart(item.id))}>-</button>
+                        <b>{item.quantity}</b>
+                        <button onClick={() => dispatch(addToCart(item))}>+</button>
+                      </div>
+
+                      <div className="qty trashes">
+                        <button
+                          className="trash-btn"
+                          onClick={() => dispatch(removeFromCart(item.id))}
+                        >
+                          <GoTrash />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* RIGHT (faqat savat bo‘lsa chiqadi) */}
+              <div className="summary">
+                <h3>Buyurtma</h3>
+
+                <div className="row">
+                  <span>Mahsulotlar:</span>
+                  <b>{totalQuantity} dona</b>
                 </div>
 
-                <div className="cart-info">
-                  <p className="cart-name">{p.title}</p>
-                  <strong className="cart-price">
-                    {p.price.toLocaleString()} so‘m
-                  </strong>
-                  <span className="cart-qty">
-                    Soni: {p.quantity}
-                  </span>
+                <div className="row">
+                  <span>Jami:</span>
+                  <b>{totalPrice.toLocaleString()} so‘m</b>
                 </div>
 
                 <button
-                  className="cart-remove"
-                  onClick={() => dispatch(removeFromCart(p.id))}
+                  className="checkout danger"
+                  onClick={() => setShowModal(true)}
                 >
-                  ✕
+                  Xamma mahsulotlarni o‘chirish
                 </button>
-              </div>
-            ))}
-          </div>
 
-          {/* TOTAL */}
-          <div className="cart-summary">
-            <div>
-              <span>Jami mahsulot:</span>
-              <strong>{totalQuantity} dona</strong>
+                <br /><br />
+
+                <button className="checkout">Rasmiylashtirish</button>
+              </div>
             </div>
-            <div>
-              <span>Jami summa:</span>
-              <strong>{totalPrice.toLocaleString()} so‘m</strong>
+          )}
+        </div>
+      </div>
+
+      {/* MODAL */}
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h3>Ogohlantirish ⚠️</h3>
+            <p>Hamma mahsulotlarni o‘chirmoqchimisiz?</p>
+
+            <div className="modal-actions">
+              <button onClick={() => setShowModal(false)}>Bekor qilish</button>
+
+              <button
+                className="danger"
+                onClick={() => {
+                  dispatch(clearCart());
+                  setShowModal(false);
+                }}
+              >
+                Ha, o‘chirish
+              </button>
             </div>
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 

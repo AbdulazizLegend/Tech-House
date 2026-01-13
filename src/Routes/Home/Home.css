@@ -1,0 +1,41 @@
+.main_home{
+  background-color: #fff;
+
+  margin: 0 auto;
+}
+.home-products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px  0;
+  align-items: center;
+  justify-content: start;
+}
+
+.home-products > * {
+  flex: 0 0 calc(25% - 20px); /* Desktop: 4 ta */
+}
+
+/* Planshet: 2 ta */
+@media (max-width: 768px) {
+  .home-products > * {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+/* Telefon: ham 2 ta */
+@media (max-width: 480px) {
+  .home-products > * {
+    flex: 0 0 calc(50% - 10px);
+  }
+  .home-products{
+    padding: 20px;
+  }
+}
+
+/* 360px: baribir 2 ta */
+@media (max-width: 360px) {
+  .home-products > * {
+    flex: 0 0 calc(50% - 8px);
+  }
+}

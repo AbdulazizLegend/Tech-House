@@ -23,3 +23,27 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+
+
+
+/* Faqat mouse bor qurilmalarda hover ishlaydi */
+@media (hover: hover) and (pointer: fine) {
+  button:hover,
+  a:hover,
+  .product_card:hover,
+  .item:hover {
+    transform: translateZ(-8px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18);
+
+  }
+}
+
+/* Touch qurilmalarda hover butunlay o‘chadi */
+@media (hover: none) and (pointer: coarse) {
+  *:hover {
+    background: inherit !important;
+    color: inherit !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
+
 import Home from "./Routes/Home/Home";
 import Delishes from "./Routes/Delishes/Delishes";
 import Cart from "./Routes/Cart/Cart";
@@ -17,25 +18,20 @@ import BottomNav from "./components/BottomNav/BottomNav.jsx";
 function App() {
   return (
     <div className="App">
+
+      {/* ❄️ SNOW EFFECT */}
+     
+
       <Header />
       <Navbar />
 
       <Routes> 
-        {/* HOME */}
         <Route path="/" element={<Home />} />
-
-        {/* AUTH */}
         <Route path="/auth/sigin" element={<Sigin />} />
         <Route path="/auth/login" element={<Login />} />
-
-        {/* CART & WISHES */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/delishes" element={<Delishes />} />
-
-        {/* PRODUCT */}
         <Route path="/product/:id" element={<SinglePage />} />
-
-        {/* CATEGORY (SEARCH + MENU) */}
         <Route path="/category/:parent" element={<CategoryPage />} />
         <Route path="/category/:parent/:category" element={<CategoryPage />} />
       </Routes>

@@ -30,6 +30,32 @@
   color: #f5752f;
 }
 
+.cart-icon-wrapper {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -4px;
+  /* tepaga chiqaradi */
+  right: -8px;
+  /* o‘ng tomonga suradi */
+  background: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  max-height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center !important;
+  border: 2px solid white;
+}
+
+
 /* FAQAT MOBILE */
 @media (max-width: 900px) {
   .bottom-nav {
