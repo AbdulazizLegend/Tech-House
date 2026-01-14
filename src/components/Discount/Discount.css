@@ -280,4 +280,8 @@
     .arrival-card{
       padding: 7px;
     }
+    .arrivals-grid{
+      display: flex;
+      flex-direction: column;
+    }
 }

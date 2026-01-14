@@ -223,7 +223,7 @@
 
 @media (max-width: 500px) {
   .product_card {
-    width: 170px;
+    width: 160px;
     height: 320px;
   }
 }

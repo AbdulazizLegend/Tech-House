@@ -19,6 +19,7 @@
   font-size: 11px;
   color: #999;
   text-decoration: none;
+  background: transparent; /* MUHIM */
 }
 
 .bn-item svg {
@@ -30,35 +31,39 @@
   color: #f5752f;
 }
 
+/* Badge */
 .cart-icon-wrapper {
   position: relative;
+  display: inline-block;
 }
 
 .cart-badge {
   position: absolute;
-  top: -4px;
-  /* tepaga chiqaradi */
-  right: -8px;
-  /* o‘ng tomonga suradi */
+  top: -6px;
+  right: -6px;
   background: red;
   color: white;
   font-size: 10px;
   font-weight: bold;
-  min-width: 15px;
-  min-height: 15px;
-  max-width: 15px;
-  max-height: 15px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center !important;
-  border: 2px solid white;
+  justify-content: center;
+  border: 2px solid #fff;
 }
-
 
 /* FAQAT MOBILE */
 @media (max-width: 900px) {
   .bottom-nav {
     display: flex;
+  }
+}
+
+@media (max-width: 500px) {
+  .bottom-nav {
+    width: 100%;
+    gap: 10px;
   }
 }
