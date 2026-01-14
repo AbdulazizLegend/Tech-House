@@ -202,6 +202,12 @@
     width: 160px;
     height: 320px;
   }
+  .product-card__price{
+    font-size: 12px;
+  }
+  .product-card__bottom .stars{
+    font-size: 10px;
+  }
 }
 
 

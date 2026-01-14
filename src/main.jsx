@@ -21,11 +21,11 @@ createRoot(document.getElementById("root")).render(
             radius={[1, 3]}
             color="#f5752f"
             style={{
-              position: "fixed",
-              width: "100%",
-              height: "100%",
-              top: 0,
-              left: 0,
+              // position: "fixed",
+              // width: "100%",
+              // height: "100%",
+              // top: 0,
+              // left: 0,
               zIndex: 9999,
               pointerEvents: "none"
             }}

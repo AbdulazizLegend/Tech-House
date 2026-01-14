@@ -16,18 +16,19 @@ import Footer from "./components/Footer/Footer";
 import BottomNav from "./components/BottomNav/BottomNav.jsx";
 import Catalog from "./Routes/Catalog/Catalog.jsx";
 import Checkout from "./Routes/Checkout/Checkout.jsx";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
 
 function App() {
   return (
     <div className="App">
 
       {/* ❄️ SNOW EFFECT */}
-     
+
 
       <Header />
       <Navbar />
-
-      <Routes> 
+<ScrollToTop/>
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth/sigin" element={<Sigin />} />
         <Route path="/auth/login" element={<Login />} />

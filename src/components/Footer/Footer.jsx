@@ -5,10 +5,9 @@ import { FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="footer">
-      
+
       {/* TOP INFO */}
       <div className="footer-top container">
-        
         <div className="info-card">
           <FaTruck />
           <div>
@@ -42,12 +41,13 @@ function Footer() {
         </div>
       </div>
 
-      {/* MAIN FOOTER */}
+      {/* MAIN */}
       <div className="footer-main">
         <div className="container footer-content">
 
           <div className="footer-logo">
             <h2>Tech House</h2>
+
             <div className="socials">
               <FaYoutube />
               <FaFacebookF />
@@ -55,18 +55,17 @@ function Footer() {
             </div>
           </div>
 
-          <ul className="footer-links">
-            <li>Bosh sahifa</li>
-            <li>Kategoriyalar</li>
-            <li>Yangiliklar</li>
-            <li>Aloqa</li>
-          </ul>
-
+          <div className="footer-links">
+            <div>Bosh sahifa</div>
+            <div>Kategoriyalar</div>
+            <div>Yangiliklar</div>
+            <div>Aloqa</div>
+          </div>
         </div>
 
         <div className="footer-bottom">
           <p>
-            Maxfiylik siyosati | Foydalanish shartlari | 
+            Maxfiylik siyosati | Foydalanish shartlari |
             © 2024 Barcha huquqlar himoyalangan
           </p>
         </div>

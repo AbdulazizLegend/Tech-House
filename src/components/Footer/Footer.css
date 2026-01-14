@@ -12,6 +12,7 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 30px 0;
+    
 }
 
 .info-card {
@@ -60,10 +61,13 @@
 }
 
 .footer-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    font-size: 14px;
+  gap: 25px;
+  list-style: none;
+  font-size: 14px;
+  display: flex;
+}
+.hhhhhhhha{
+  display: flex !important;
 }
 
 .footer-links li {
@@ -131,7 +135,7 @@
 
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 370px) {
   .footer {
     padding: 0 12px;
   }
@@ -146,11 +150,14 @@
     gap: 8px;
     padding: 12px;
   }
+  .footer-content{
+    justify-content: space-evenly;
+  }
 
   .info-card h4 {
     font-size: 13px;
   }
-
+  
   .info-card p {
     font-size: 11px;
   }
@@ -166,8 +173,10 @@
   .footer-links {
     flex-direction: column;
     align-items: center;
+    align-items: start;
     gap: 10px;
     font-size: 13px;
+
   }
 
   .footer-bottom {

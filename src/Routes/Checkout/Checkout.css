@@ -28,6 +28,8 @@
   border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 14px;
+  color: #333;
+
 }
 
 .checkout-form input:focus {

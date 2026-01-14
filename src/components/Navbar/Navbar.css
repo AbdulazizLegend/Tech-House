@@ -1,8 +1,11 @@
- nav {
+ .navbar {
    width: 100%;
    height: 66px;
    background-color: #fdecef;
    padding: 0 50px;
+   position: sticky;
+   top: 0;
+   z-index: 99999;
 
  }
 
@@ -266,9 +269,10 @@
 
 
  @media screen and (max-width: 770px) {
-   nav {
+   .navbar {
      padding: 10px 0;
-     height: 110px;
+     height: 115px;
+     top: -60px;
    }
 
    .navinner {
