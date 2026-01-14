@@ -94,6 +94,7 @@
   cursor: pointer;
   background-color: #f5752f;
   font-size: 20px;
+  color: white;
 }
 
 .qty button:hover {
