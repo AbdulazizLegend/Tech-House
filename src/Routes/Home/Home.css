@@ -10,17 +10,17 @@
 }
 
 .home-products > * {
-  flex: 0 0 calc(50% - 5px); /* doim 2ta */
+  flex: 0 0 calc(50% - 5px); 
 }
 
-/* Desktopda 4 ta bo‘lsin desangiz */
+
 @media (min-width: 900px) {
   .home-products > * {
     flex: 0 0 calc(25% - 10px);
   }
 }
 
-/* Telefon */
+
 @media (max-width: 480px) {
   .home-products {
     padding: 10px;
@@ -32,7 +32,7 @@
   }
 }
 
-/* Juda kichik ekran (320–360px) */
+
 @media (max-width: 360px) {
   .home-products {
     padding: 6px;

@@ -19,7 +19,7 @@ function Cart() {
         <div className="container">
           <h2 className="page-title">Savatingiz ({totalQuantity})</h2>
 
-          {/* Agar savat bo‘sh bo‘lsa */}
+       
           {cart.length === 0 ? (
             <div className="empty">🛒 Savatcha bo‘sh</div>
           ) : (
@@ -79,8 +79,9 @@ function Cart() {
                 </button>
 
                 <br /><br />
-
+                <Link to="/checkout">
                 <button className="checkout">Rasmiylashtirish</button>
+                </Link>
               </div>
             </div>
           )}

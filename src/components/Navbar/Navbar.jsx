@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 function Navbar() {
   const cart = useSelector(state => state.cart.items);
 
-  // jami mahsulot soni (quantity bo‘yicha)
   const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (

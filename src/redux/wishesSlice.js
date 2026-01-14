@@ -14,14 +14,14 @@ const wishesSlice = createSlice({
       const exist = state.value.find(p => p.id === product.id);
 
       if (exist) {
-        // ❌ like qayta bosilsa → o‘chadi
+       
         state.value = state.value.filter(p => p.id !== product.id);
       } else {
-        // ❤️ like bosilsa → qo‘shiladi
+       
         state.value.push(product);
       }
 
-      // 💾 har safar localStorage yangilanadi
+     
       localStorage.setItem("wishes", JSON.stringify(state.value));
     },
 

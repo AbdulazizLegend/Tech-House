@@ -45,12 +45,7 @@
 }
 
 
-
-/* .clear-btn:hover {
-  background: #f5752f;
-  color: #fff;
-  transition: 0.3s;
-} */
+ 
 .clear-btn:hover {
   background: transparent;
   color: #f5752f;

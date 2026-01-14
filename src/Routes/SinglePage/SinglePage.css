@@ -8,7 +8,7 @@
   padding: 30px 0;
 
   background: transparent;
-  /* background-color: #8b8b8b; */
+
 
 
 }
@@ -50,12 +50,12 @@
 
 .single-img {
   width: 100%;
-  /* background: linear-gradient(#ccccca, #e4e5e2); */
+
   background-color: #fff;
   border: 1px solid #a2a2a2;
 
   border-radius: 14px;
-  /* box-shadow: 0 0 10px  #777777; */
+
 }
 
 .single-info {
@@ -64,13 +64,13 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 10px;
-  /* background: linear-gradient(#f2f3f0, #e7e7e5); */
+
   background-color: #fff;
   color: #333;
   border-radius: 10px;
   border: 1px solid #a2a2a2;
-  /* box-shadow: 0 0 10px  #777777; */
-  /* background-color: red; */
+
+
 
 }
 
@@ -95,7 +95,7 @@
 
 .container_button {
   width: 60%;
-  /* background-color: red; */
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -103,7 +103,7 @@
 }
 
 .buy-btn {
-  /* padding: 12px 22px; */
+
   width: 100%;
   height: 40px;
   background: #f5752f;
@@ -116,7 +116,7 @@
 
 .buy-btn:hover {
   background: transparent;
-  /* transition: 0.3s; */
+
   color: #f5752f;
   border: 1px solid #f5752f;
 }
@@ -252,7 +252,7 @@ li {
   color: #f5752f;
   cursor: pointer;
   text-decoration: none;
-  /* width: 380px; */
+
   height: 40px;
   border: 1px solid #f5752f;
   border-radius: 10px;
@@ -303,7 +303,7 @@ li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* 🔥 to‘liq qoplaydi */
+
   object-position: center;
 }
 
@@ -342,9 +342,7 @@ li {
 
 @media (max-width: 1081px) {
 
-  /* .buy-now-link {
-  font-size: 14px;
-} */
+ 
   .single-wrapper {
     grid-template-columns: 1fr;
   }

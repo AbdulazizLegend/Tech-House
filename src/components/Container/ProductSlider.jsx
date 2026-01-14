@@ -8,7 +8,6 @@ export default function Product({ images = [] }) {
   const [open, setOpen] = useState(false);
   const imgRef = useRef(null);
 
-  // 🔥 HAMMA RASMLARNI BITTA ARRAYGA YIG'DIK
   const allImages = [...images, l1, l1, l1, l1];
 
   if (!allImages.length) return null;
@@ -36,7 +35,6 @@ export default function Product({ images = [] }) {
     <>
       <div className="pz-wrap">
 
-        {/* THUMBS */}
         <div className="pz-thumbs">
           <div className="kartinkas">
             {allImages.map((img, i) => (
@@ -51,7 +49,6 @@ export default function Product({ images = [] }) {
           </div>
         </div>
 
-        {/* MAIN */}
         <div
           className="pz-main"
           onMouseMove={handleMove}

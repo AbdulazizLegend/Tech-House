@@ -1,4 +1,4 @@
-/* slider wrapper */
+
 .slider {
     position: relative;
     width: 100%;
@@ -6,7 +6,7 @@
     overflow: hidden;
 }
 
-/* track */
+
 .slider__track {
     display: flex;
     height: 100%;
@@ -24,7 +24,7 @@
     object-fit: cover;
 }
 
-/* buttons */
+
 .slider__btn {
     position: absolute;
     top: 50%;
@@ -81,7 +81,7 @@
  background-color:#f5752f;
 }
 
-/* dots */
+
 .slider__dots {
     position: absolute;
     bottom: 15px;
@@ -115,7 +115,7 @@
     right: 20px;
 }
 }
-/* responsive */
+
 @media (max-width: 768px) {
     .slider {
         height: 220px;

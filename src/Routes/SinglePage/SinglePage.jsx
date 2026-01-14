@@ -38,9 +38,7 @@ function SinglePage() {
     navigate("/cart");
   };
 
-  // 🔥 MUHIM JOY
-  // Agar product.images bo‘lsa → array
-  // bo‘lmasa → bitta product.url dan array qilamiz
+ 
   const images = product.images?.length
     ? product.images
     : [product.url];
@@ -64,7 +62,6 @@ function SinglePage() {
 
           {/* IMAGE */}
           <div className="single-img">
-            {/* 👉 RASMLAR SLIDER GA YUBORILDI */}
             <ProductSlider images={images} />
           </div>
 

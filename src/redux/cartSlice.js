@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-/* 🔥 localStorage dan o‘qish */
+ 
 const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
-    items: savedCart, // [{id, title, price, url, quantity}]
+    items: savedCart, 
   },
   reducers: {
-    /* ➕ SAVATCHAGA QO‘SHISH */
+     
     addToCart(state, action) {
       const item = action.payload;
 
@@ -24,7 +24,7 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.items));
     },
 
-    /* ➖ BIR DONA KAMAYTIRISH */
+     
     decreaseCart(state, action) {
       const item = state.items.find(p => p.id === action.payload);
 
@@ -37,7 +37,7 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.items));
     },
 
-    /* ❌ BUTUNLAY O‘CHIRISH */
+ 
     removeFromCart(state, action) {
       state.items = state.items.filter(
         p => p.id !== action.payload
@@ -46,7 +46,6 @@ const cartSlice = createSlice({
       localStorage.setItem("cart", JSON.stringify(state.items));
     },
 
-    /* 🧹 TOZALASH */
     clearCart(state) {
       state.items = [];
       localStorage.removeItem("cart");
