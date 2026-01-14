@@ -14,6 +14,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import BottomNav from "./components/BottomNav/BottomNav.jsx";
+import Catalog from "./Routes/Catalog/Catalog.jsx";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/auth/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/delishes" element={<Delishes />} />
+        <Route path="/catalog" element={<Catalog />} />
         <Route path="/product/:id" element={<SinglePage />} />
         <Route path="/category/:parent" element={<CategoryPage />} />
         <Route path="/category/:parent/:category" element={<CategoryPage />} />

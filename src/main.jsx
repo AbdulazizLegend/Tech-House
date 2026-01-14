@@ -16,10 +16,12 @@ createRoot(document.getElementById("root")).render(
       <BrowserRouter>
         <ProductProvider>           {/* 🔥 CONTEXT */}
             <Snowfall
+            className="Snow"
         snowflakeCount={80}
         speed={[0.5, 2]}
         radius={[1, 3]}
-        color="#ffffffff"
+        color="#f5752f"
+       
 
       />
           <App />

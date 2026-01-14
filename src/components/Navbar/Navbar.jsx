@@ -28,7 +28,7 @@ function Navbar() {
 
           {/* KATALOG */}
           <div className="iconka">
-            <NavLink to="/" className="icon-link">
+            <NavLink to="/catalog" className="icon-link">
               <BiCategory className="ikons" />
               <span>Katalog</span>
             </NavLink>

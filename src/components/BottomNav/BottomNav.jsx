@@ -19,7 +19,7 @@ function BottomNav() {
         <span>Bosh sahifa</span>
       </NavLink>
 
-      <NavLink to="/" className="bn-item">
+      <NavLink to="/catalog" className="bn-item">
         <BiCategory />
         <span>Katalog</span>
       </NavLink>

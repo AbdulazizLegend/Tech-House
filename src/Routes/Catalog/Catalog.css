@@ -1,0 +1,88 @@
+.catalog {
+  background: #f6f6f6;
+  padding: 30px 0;
+}
+
+.Ccatalog-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+}
+
+/* FILTER */
+.Ccatalog-filter {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+}
+
+.Ccatalog-filter h3 {
+  color: #f5752f;
+  margin-bottom: 15px;
+}
+
+.Cfilter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.Cfilter-box input,
+.Cfilter-box select {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.Cclear-btn {
+  background: #f5752f;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* PRODUCTS */
+.Ccatalog-content h2 {
+  margin-bottom: 15px;
+  color: #f5752f;
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.Cempty {
+  color: gray;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .Ccatalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .Ccatalog-filter {
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

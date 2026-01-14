@@ -84,7 +84,7 @@ function CategoryPage() {
                     onClick={() => toggleColor(c)}
                     className={`color-item ${selectedColors.includes(c) ? "active" : ""}`}
                   >
-                    <span className={`dot ${c}`}></span>
+                    <span className={`dod ${c}`}></span>
                     {c}
                   </div>
                 ))}
@@ -133,3 +133,5 @@ function CategoryPage() {
 }
 
 export default CategoryPage;
+
+
