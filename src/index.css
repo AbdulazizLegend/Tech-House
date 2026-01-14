@@ -35,3 +35,26 @@ input{
   background-color: #fff;
 }
  
+
+
+
+
+
+
+/* Telefonlarda ko‘k highlight chiqmasin */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Text va rasm tanlanmasin */
+img, a, button, svg {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Bosganda ko‘k fon chiqmasin */
+button, a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
