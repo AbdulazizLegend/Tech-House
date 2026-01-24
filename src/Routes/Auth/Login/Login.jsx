@@ -1,6 +1,6 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Login.css";
-import {Link} from "react-router-dom"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -12,34 +12,33 @@ function Login() {
   };
 
   return (
-    <div className="login-page">
-      <div className="container">
+    <div className="auth">
+      <div className="auth-box">
+        <h2 className="auth-title">Kirish</h2>
 
-        <div className="login-card">
-          <h2>Kirish</h2>
+        <form className="auth-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Email yoki telefon"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Email yoki telefon"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
+          <input
+            type="password"
+            placeholder="Parol"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-            <input
-              type="password"
-              placeholder="Parol"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+          <button className="auth-btn" type="submit">
+            Kirish
+          </button>
+        </form>
 
-            <button type="submit">Kirish</button>
-          </form>
-
-          <p className="login-footer">
-            Akkount yo‘qmi? <Link to="/auth/sigin">Ro‘yxatdan o‘tish</Link>
-          </p>
-        </div>
+        <p className="auth-footer">
+          Akkount yo‘qmi? <Link to="/auth/sigin">Ro‘yxatdan o‘tish</Link>
+        </p>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Sigin.css";
 
 function Sigin() {
@@ -6,7 +7,7 @@ function Sigin() {
     name: "",
     phone: "",
     password: "",
-    confirm: ""
+    confirm: "",
   });
 
   const handleChange = (e) => {
@@ -21,15 +22,15 @@ function Sigin() {
       return;
     }
 
-    alert("Ro‘yxatdan o‘tildi");
+    alert("Ro‘yxatdan muvaffaqiyatli o‘tildi");
   };
 
   return (
-    <div className="login-page">
-      <div className="login-card">
-        <h2>Ro‘yxatdan o‘tish</h2>
+    <div className="auth">
+      <div className="auth-box">
+        <h2 className="auth-title">Ro‘yxatdan o‘tish</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form className="auth-form" onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
@@ -62,11 +63,13 @@ function Sigin() {
             onChange={handleChange}
           />
 
-          <button type="submit">Ro‘yxatdan o‘tish</button>
+          <button className="auth-btn" type="submit">
+            Ro‘yxatdan o‘tish
+          </button>
         </form>
 
-        <p className="login-footer">
-          Akkount bormi? <span>Kirish</span>
+        <p className="auth-footer">
+          Akkount bormi? <Link to="/auth/login">Kirish</Link>
         </p>
       </div>
     </div>

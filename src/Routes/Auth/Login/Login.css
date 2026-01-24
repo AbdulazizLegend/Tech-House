@@ -1,73 +1,88 @@
-.login-page {
+.auth {
   min-height: 100vh;
-  background: #f6f6f6;
+  background: linear-gradient(135deg, #fff5ef, #ffffff);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  color: #333;
+  font-family: system-ui, sans-serif;
 }
 
-.login-card {
+.auth-box {
   width: 100%;
-  max-width: 380px;
-  background: white;
-  padding: 20px;
-  border-radius: 18px;
+  max-width: 400px;
+  background: #fff;
+  padding: 35px;
+  border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.08);
 }
 
-.login-card h2 {
+.auth-title {
   text-align: center;
   margin-bottom: 25px;
   color: #f5752f;
+  font-size: 26px;
 }
 
-.login-card form {
+.auth-form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
-.login-card input {
+.auth-form input {
   padding: 12px 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   border: 1px solid #ddd;
   outline: none;
   font-size: 14px;
-  color: #333;
+  transition: 0.2s;
 }
 
-.login-card input:focus {
+.auth-form input:focus {
   border-color: #f5752f;
+  box-shadow: 0 0 0 2px #f5752f20;
 }
 
-.login-card button {
+.auth-btn {
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   background: #f5752f;
-  color: white;
+  color: #fff;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
 }
 
-.login-card button:hover {
-  background: #e8641f;
+.auth-btn:hover {
+  background: #e66420;
+  transform: translateY(-1px);
 }
 
-.login-footer {
+.auth-footer {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 18px;
   font-size: 14px;
 }
 
-.login-footer a {
+.auth-footer a {
   color: #f5752f;
-  cursor: pointer;
   font-weight: 600;
+  text-decoration: none;
 }
 
-@media screen and (max-width: 500px) {
-    
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-box {
+    padding: 25px;
+  }
+
+  .auth-title {
+    font-size: 22px;
+  }
 }
