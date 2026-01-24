@@ -1,88 +1,221 @@
-.catalog {
-  background: #f6f6f6;
-  padding: 30px 0;
+.catalog-page{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+  font-family:system-ui, sans-serif;
+  padding: 20px 0;
 }
 
-.Ccatalog-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 20px;
+/* TOP AREA */
+.catalog-top{
+  display:flex;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+  overflow:hidden;
 }
 
-/* FILTER */
-.Ccatalog-filter {
-  background: white;
-  padding: 20px;
-  border-radius: 16px;
-  border: 1px solid #eee;
-  height: fit-content;
-}
-
-.Ccatalog-filter h3 {
-  color: #f5752f;
-  margin-bottom: 15px;
-}
-
-.Cfilter-box {
+/* SIDEBAR */
+.sidebar{
+  width:260px;
+  background:#fafafa;
+  border-right:1px solid #eee;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: left;
   gap: 10px;
-  margin-bottom: 20px;
-}
-
-.Cfilter-box input,
-.Cfilter-box select {
   padding: 10px;
+  
+}
+#isimlaride{
+  background-color: #fdecef;
+}
+#qator{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.parent{
   border-radius: 10px;
-  border: 1px solid #ddd;
-  outline: none;
-  color: #333;
+  padding:12px 16px;
+  cursor:pointer;
+  transition:.2s;
+  width: 100%;
+}
+
+.parent:hover{
+  background:#f5752f;
+  color:#ffffff;
+}
+
+.parent.active{
+  background:#f5752f;
+  font-weight:600;
+  color:#ffffff;
+}
+
+/* MEGA MENU */
+.mega{
+  flex:1;
+  padding:20px;
+}
+
+.mega h3{
+  margin-bottom:12px;
+}
+
+.mega-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+
+.mega-grid p{
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  transition:.15s;
+  background-color: #fdecef;
+}
+
+ 
+.mega-grid p:active {
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* Hover */
+.mega-grid p:hover {
+  background:#f5752f;
+  color:#fff;
+}
+
+/* Active (tanlangan) */
+.active-sub {
+  background:#f5752f;
+  color:#ffffff;
+  font-weight:600;
+}
+
+
+ 
+
+
+.main_catalog{
   background-color: #fff;
+  color: #333;
 }
 
-.Cclear-btn {
-  background: #f5752f;
-  color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 12px;
-  cursor: pointer;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1) Katta desktop (1400px ↓) */
+@media (max-width: 1400px) {
+  .mega-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* PRODUCTS */
-.Ccatalog-content h2 {
-  margin-bottom: 15px;
-  color: #f5752f;
+/* 2) Laptop (1200px ↓) */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 220px;
+  }
 }
 
-.catalog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 18px;
+/* 3) Tablet landscape (992px ↓) */
+@media (max-width: 992px) {
+  .catalog-top {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .parent {
+    width: auto;
+  }
+
+  .mega-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.Cempty {
-  color: gray;
+/* 4) Tablet portrait (768px ↓) */
+@media (max-width: 768px) {
+  .mega-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .parent {
+    font-size: 14px;
+  }
 }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .Ccatalog-layout {
+/* 5) Katta telefonlar (600px ↓) */
+@media (max-width: 600px) {
+  .mega-grid {
     grid-template-columns: 1fr;
   }
 
-  .Ccatalog-filter {
-    position: static;
+  .sidebar {
+    gap: 5px;
   }
 }
 
+/* 6) Telefon (480px ↓) */
 @media (max-width: 480px) {
-  .catalog-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
+  .parent {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  .mega h3 {
+    font-size: 16px;
+  }
+}
+
+/* 7) Eng kichik ekran (360px ↓) */
+@media (max-width: 360px) {
+  .sidebar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .parent {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .mega {
+    padding: 10px;
+  }
+
+  .productsaaa {
+    gap: 5px;
   }
 }

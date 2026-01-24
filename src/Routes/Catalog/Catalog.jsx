@@ -2,83 +2,100 @@ import { useState } from "react";
 import PRODUCTS from "../../static";
 import ProductCard from "../../components/Products/ProductCard";
 import "./Catalog.css";
+import { IoIosArrowForward } from "react-icons/io";
 
 function Catalog() {
-  const [minPrice, setMinPrice] = useState("");
-  const [maxPrice, setMaxPrice] = useState("");
-  const [brand, setBrand] = useState("");
+  const [hoverParent, setHoverParent] = useState("");
+  const [activeParent, setActiveParent] = useState("Barcha mahsulotlar");
+  const [activeCategory, setActiveCategory] = useState("");
 
-  const brands = ["Apple", "Samsung", "Xiaomi", "HP", "Lenovo"];
+  const parents = [
+    "Barcha mahsulotlar",
+    ...new Set(PRODUCTS.map((p) => p.parentCategory)),
+  ];
 
-  const filtered = PRODUCTS.filter(p => {
-    const priceOk =
-      (!minPrice || p.price >= minPrice) &&
-      (!maxPrice || p.price <= maxPrice);
+  const subMap = PRODUCTS.reduce((acc, p) => {
+    if (!acc[p.parentCategory]) acc[p.parentCategory] = new Set();
+    acc[p.parentCategory].add(p.category);
+    return acc;
+  }, {});
 
-    const brandOk =
-      !brand || p.brand?.toLowerCase() === brand.toLowerCase();
+  const filtered = PRODUCTS.filter((p) => {
+    if (activeParent !== "Barcha mahsulotlar" && activeCategory) {
+      return p.parentCategory === activeParent && p.category === activeCategory;
+    }
 
-    return priceOk && brandOk;
+    if (activeParent !== "Barcha mahsulotlar") {
+      return p.parentCategory === activeParent;
+    }
+
+    return true;
   });
 
+  const currentParent = hoverParent || activeParent;
+
   return (
-    <div className="catalog">
-      <div className="container catalog-layout">
-
-        {/* FILTER SIDEBAR */}
-        <aside className="Ccatalog-filter">
-          <h3>Filtrlar</h3>
-
-          <div className="Cfilter-box">
-            <p>Narx</p>
-            <input
-              placeholder="dan"
-              value={minPrice}
-              onChange={e => setMinPrice(e.target.value)}
-            />
-            <input
-              placeholder="gacha"
-              value={maxPrice}
-              onChange={e => setMaxPrice(e.target.value)}
-            />
-          </div>
-
-          <div className="Cfilter-box">
-            <p>Brend</p>
-            <select value={brand} onChange={e => setBrand(e.target.value)}>
-              <option value="">Hammasi</option>
-              {brands.map(b => (
-                <option key={b} value={b}>{b}</option>
+    <div className="main_catalog">
+      <div className="container">
+        <div className="catalog-page">
+          {/* TOP KATALOG */}
+          <div className="catalog-top">
+            {/* SIDEBAR */}
+            <div className="sidebar">
+              {parents.map((parent) => (
+                <div
+                id="qator"
+                  key={parent}
+                  className={`parent ${activeParent === parent ? "active" : ""}`}
+                  onMouseEnter={() => setHoverParent(parent)}
+                  onMouseLeave={() => setHoverParent("")}
+                  onClick={() => {
+                    setActiveParent(parent);
+                    setActiveCategory("");
+                  }}
+                >
+                <p>
+                   {parent}
+                  </p> 
+                  <IoIosArrowForward />
+                </div>
               ))}
-            </select>
+            </div>
+
+            {/* MEGA MENU */}
+            <div className="mega">
+              {currentParent && currentParent !== "Barcha mahsulotlar" && (
+                <>
+                  <h3>{currentParent}</h3>
+
+                  <div className="mega-grid">
+                    {[...subMap[currentParent]]?.map((sub) => (
+                      <p
+                        key={sub}
+                        className={activeCategory === sub ? "active-sub" : ""}
+                        onClick={() => {
+                          setActiveParent(currentParent);
+                          setActiveCategory(sub);
+                        }}
+                      >
+                        {sub}
+                      </p>
+                    ))}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
 
-          <button
-            className="Cclear-btn"
-            onClick={() => {
-              setMinPrice("");
-              setMaxPrice("");
-              setBrand("");
-            }}
-          >
-            Tozalash
-          </button>
-        </aside>
-
-        {/* PRODUCTS */}
-        <main className="Ccatalog-content">
-          <h2>Katalog</h2>
-
-          <div className="catalog-grid">
-            {filtered.length > 0 ? (
-              filtered.map(p => (
-                <ProductCard key={p.id} product={p} />
-              ))
+          {/* MAHSULOTLAR */}
+          <div className="home-products">
+            {filtered.length ? (
+              filtered.map((p) => <ProductCard key={p.id} product={p} />)
             ) : (
-              <p className="Cempty">Mahsulot topilmadi</p>
+              <p>Mahsulot topilmadi</p>
             )}
           </div>
-        </main>
+        </div>
       </div>
     </div>
   );
