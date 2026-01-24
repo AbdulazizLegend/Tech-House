@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   font-family: system-ui, sans-serif;
+  padding: 20px;
 }
 
 .auth-box {

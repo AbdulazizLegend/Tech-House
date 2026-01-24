@@ -5,6 +5,8 @@
   align-items: center;
   justify-content: center;
   font-family: system-ui, sans-serif;
+  padding: 20px;
+
 }
 
 .auth-box {
@@ -77,7 +79,7 @@
 }
 
 /* Responsive */
-@media (max-width: 480px) {
+@media (max-width: 380px) {
   .auth-box {
     padding: 25px;
   }

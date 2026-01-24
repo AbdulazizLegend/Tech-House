@@ -9,10 +9,12 @@ import "./Home.css";
 function Home() {
   return (
     <div  className="main_home">
+    <div  className="container
+    ">
       <Slider />
 
       {/* 1-qator mahsulotlar */}
-      <div className="container home-products">
+      <div className=" home-products">
         {PRODUCTS.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
@@ -21,13 +23,14 @@ function Home() {
       <BestSels />
 
       {/* 2-qator mahsulotlar */}
-      <div className="container home-products">
+      <div className=" home-products">
         {PRODUCTS.map(product => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
 
       <Discount />
+    </div>
     </div>
   );
 }
