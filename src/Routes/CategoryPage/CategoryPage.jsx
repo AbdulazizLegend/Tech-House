@@ -1,10 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import PRODUCTS from "../../static";
+import useProducts from "../../static/useProducts";
 import ProductCard from "../../components/Products/ProductCard";
 import "./CategoryPage.css";
 
 function CategoryPage() {
+  const PRODUCTS = useProducts();
   const { parent } = useParams();
 
   const [minPrice, setMinPrice] = useState("");

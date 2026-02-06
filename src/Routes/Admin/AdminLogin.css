@@ -1,0 +1,37 @@
+.admLogin{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 30px 12px;
+}
+
+.admLogin__card{
+  width: min(420px, 100%);
+  padding: 18px;
+}
+
+.admLogin__brand{ display:flex; gap: 12px; align-items:center; }
+.admLogin__logo{
+  width: 48px; height: 48px;
+  border-radius: 16px;
+  display:flex; align-items:center; justify-content:center;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, var(--adm-brand), var(--adm-brand2));
+}
+.admLogin__title{ font-size: 18px; font-weight: 900; }
+.admLogin__sub{ font-size: 12px; margin-top: 4px; }
+
+.admLogin__form{ margin-top: 14px; display:flex; flex-direction:column; gap: 12px; }
+.admLogin__lbl{ display:flex; flex-direction:column; gap: 8px; font-size: 12px; color: var(--adm-muted); }
+
+.admLogin__err{
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(239,68,68,.25);
+  background: rgba(239,68,68,.08);
+  color: #991b1b;
+}
+
+.admLogin__hint{ font-size: 12px; }

@@ -3,10 +3,11 @@ import Discount from "../../components/Discount/Discount";
 import Slider from "../../components/Slider/Slider";
 import ProductCard from "../../components/Products/ProductCard.jsx";
 
-import PRODUCTS from "../../static";
+import useProducts from "../../static/useProducts";
 import "./Home.css";
 
 function Home() {
+  const PRODUCTS = useProducts();
   return (
     <div  className="main_home">
     <div  className="container

@@ -2,7 +2,7 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { HiSearch } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
-import PRODUCTS from "../../static";
+import useProducts from "../../static/useProducts";
 import "./Search.css";
 
 function useDebounce(value, delay = 300) {
@@ -15,6 +15,7 @@ function useDebounce(value, delay = 300) {
 }
 
 function Search() {
+  const PRODUCTS = useProducts();
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const wrapperRef = useRef(null);

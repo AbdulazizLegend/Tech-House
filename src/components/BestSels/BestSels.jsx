@@ -1,10 +1,11 @@
-import PRODUCTS from "../../static";
+import useProducts from "../../static/useProducts";
 import "./BestSels.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useRef } from "react";
 import ProductCard from "../Products/ProductCard.jsx";
 
 function BestSels() {
+  const PRODUCTS = useProducts();
   const scrollRef = useRef(null);
 
   const scroll = (value) => {

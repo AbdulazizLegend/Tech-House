@@ -1,0 +1,10 @@
+.admTop{
+  padding: 14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.admTop__title{ font-size: 18px; font-weight: 900; }
+.admTop__sub{ font-size: 12px; margin-top: 3px; }

@@ -4,6 +4,7 @@ import "./Cart.css";
 import { GoTrash } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import CartItemSlider from "./CartItemSlider";
 
 function Cart() {
   const cart = useSelector(state => state.cart.items);
@@ -29,7 +30,7 @@ function Cart() {
                 {cart.map(item => (
                   <div className="item" key={item.id}>
                     <Link to={`/product/${item.id}`}>
-                      <img src={item.url} alt={item.title} />
+                      <CartItemSlider item={item} />
                     </Link>
 
                     <div className="info">

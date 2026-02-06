@@ -5,12 +5,13 @@ import { toggleWish } from "../../redux/wishesSlice";
 import { GoHeart, GoHeartFill } from "react-icons/go";
 import { IoIosArrowForward } from "react-icons/io";
 
-import PRODUCTS from "../../static";
+import useProducts from "../../static/useProducts";
 import ProductCard from "../../components/Products/ProductCard";
 import ProductSlider from "../../components/Container/ProductSlider";
 import "./SinglePage.css";
 
 function SinglePage() {
+  const PRODUCTS = useProducts();
   const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();

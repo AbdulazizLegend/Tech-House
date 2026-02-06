@@ -1,0 +1,38 @@
+.catWrap {
+  display: grid;
+  gap: 12px;
+}
+.catGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.catRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--adm-border);
+  border-radius: 14px;
+  background: #fff;
+}
+.catRow b {
+  font-weight: 800;
+}
+.catForm {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.catForm input,
+.catForm select {
+  flex: 1;
+}
+ 
+
+@media (max-width: 880px) {
+  .catGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 
 
@@ -17,19 +17,39 @@ import BottomNav from "./components/BottomNav/BottomNav.jsx";
 import Catalog from "./Routes/Catalog/Catalog.jsx";
 import Checkout from "./Routes/Checkout/Checkout.jsx";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop.jsx";
+import Admin from "./Routes/Admin/Admin.jsx";
+import Snowfall from "react-snowfall";
 
 function App() {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith("/admin");
   return (
     <div className="App">
 
-      {/* ❄️ SNOW EFFECT */}
-
-
-      <Header />
-      <Navbar />
-<ScrollToTop/>
+      {!isAdmin && (
+        <Snowfall
+          snowflakeCount={80}
+          speed={[0.5, 2]}
+          radius={[1, 3]}
+          color="#f5752f"
+          style={{
+            position: "fixed",
+            width: "100%",
+            height: "100%",
+            top: 0,
+            left: 0,
+            zIndex: 9999,
+            pointerEvents: "none",
+          }}
+        />
+      )}
+      {!isAdmin && <Header />}
+      {!isAdmin && <Navbar />}
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/*" element={<Admin />} />
         <Route path="/auth/sigin" element={<Sigin />} />
         <Route path="/auth/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
@@ -41,8 +61,8 @@ function App() {
         <Route path="/category/:parent/:category" element={<CategoryPage />} />
       </Routes>
 
-      <Footer />
-      <BottomNav />
+      {!isAdmin && <Footer />}
+      {!isAdmin && <BottomNav />}
     </div>
   );
 }

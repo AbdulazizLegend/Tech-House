@@ -1,10 +1,11 @@
 import { useState } from "react";
-import PRODUCTS from "../../static";
+import useProducts from "../../static/useProducts";
 import ProductCard from "../../components/Products/ProductCard";
 import "./Catalog.css";
 import { IoIosArrowForward } from "react-icons/io";
 
 function Catalog() {
+  const PRODUCTS = useProducts();
   const [hoverParent, setHoverParent] = useState("");
   const [activeParent, setActiveParent] = useState("Barcha mahsulotlar");
   const [activeCategory, setActiveCategory] = useState("");

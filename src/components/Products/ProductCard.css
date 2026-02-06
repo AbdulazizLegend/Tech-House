@@ -54,7 +54,6 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 800px;
   overflow: hidden;
   border-radius: 13px 13px 0 0;
 }
@@ -121,7 +120,7 @@
 }
 
 .product-card__cart:hover {
-  background: #ffffffc9;
+  background: #782121c9;
   color: #f5752f;
   border: 1px solid #f5752f;
 }
@@ -222,3 +221,55 @@
 
 
 
+
+
+/* ===== Card swipe slider ===== */
+.product-card__img{
+  position: relative;
+  height: 200px;
+  touch-action: pan-y;
+}
+
+.pc-slider{
+  display:flex;
+  width: 100%;
+  height: 100%;
+  transition: transform .25s ease;
+}
+
+.pc-slide{
+  min-width: 100%;
+  height: 100%;
+}
+
+.pc-slide img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.pc-dots{
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  display:flex;
+  justify-content:center;
+  gap: 6px;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+.pc-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,.55);
+  cursor: pointer;
+}
+.pc-dot.active{
+  background: #f5752f;
+}

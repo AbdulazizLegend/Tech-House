@@ -1,0 +1,198 @@
+:root {
+  /* Front (dark) bilan bir xil universal tema */
+  --adm-bg: #242424;
+  --adm-card: rgba(255, 255, 255, 0.06);
+  --adm-border: rgba(255, 255, 255, 0.14);
+  --adm-text: rgba(255, 255, 255, 0.92);
+  --adm-muted: rgba(255, 255, 255, 0.7);
+  --adm-brand: #2563eb;
+  --adm-brand2: #60a5fa;
+  --adm-danger: #ef4444;
+  --adm-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --adm-radius: 16px;
+}
+
+.thAdmin {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      900px 450px at 18% 12%,
+      rgba(37, 99, 235, 0.22),
+      transparent 60%
+    ),
+    radial-gradient(
+      850px 420px at 82% 18%,
+      rgba(96, 165, 250, 0.18),
+      transparent 62%
+    ),
+    var(--adm-bg);
+  color: var(--adm-text);
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.thAdmin__main {
+  padding: 16px;
+ 
+}
+.thAdmin__content {
+  margin-top: 12px;
+
+}
+
+.admCard {
+  background: var(--adm-card);
+  border: 1px solid var(--adm-border);
+  border-radius: var(--adm-radius);
+  box-shadow: var(--adm-shadow);
+  margin-bottom:  14px !important;
+ 
+}
+
+.admBtn {
+  border: 1px solid var(--adm-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--adm-text);
+  padding: 10px 12px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+.admBtn:hover {
+  transform: translateY(-1px);
+}
+.admBtn:active {
+  transform: translateY(0px);
+}
+
+.admBtnPrimary {
+  background: linear-gradient(135deg, var(--adm-brand), var(--adm-brand2));
+  color: #fff;
+  border-color: rgba(37, 99, 235, 0.28);
+}
+.admBtnDanger {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.22);
+  color: #b91c1c;
+}
+
+.admInput,
+.admSelect,
+.admTextarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--adm-border);
+  background: rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+.admTextarea {
+  min-height: 98px;
+  resize: vertical;
+}
+
+.admMuted {
+  color: var(--adm-muted);
+}
+
+.admGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.admGrid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.box {
+  padding: 14px;
+}
+.boxHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.boxTitle {
+  font-weight: 900;
+}
+
+.tableWrap {
+  width: 100%;
+  overflow: auto;
+  border-radius: 14px;
+  border: 1px solid var(--adm-border);
+}
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 680px;
+}
+.tbl th,
+.tbl td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--adm-border);
+  vertical-align: middle;
+}
+.tbl thead th {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+.tbl tbody tr:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+.empty {
+  padding: 14px;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--adm-border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.title {
+  font-weight: 700;
+}
+.row2 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+.row2 .admInput {
+  flex: 1;
+}
+
+@media (max-width: 880px) {
+  .thAdmin {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .thAdmin__main {
+    padding: 10px;
+  }
+  .admGrid2,
+  .admGrid3 {
+    grid-template-columns: 1fr;
+  }
+}

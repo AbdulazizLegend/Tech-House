@@ -8,7 +8,9 @@ export default function Product({ images = [] }) {
   const [open, setOpen] = useState(false);
   const imgRef = useRef(null);
 
-  const allImages = [...images, l1, l1, l1, l1];
+  const clean = (images || []).filter(Boolean);
+  // Agar admin kiritmagan bo‘lsa ham, UI buzilmasin
+  const allImages = clean.length ? clean : [l1, l1, l1];
 
   if (!allImages.length) return null;
 
